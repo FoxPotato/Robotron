@@ -28,6 +28,8 @@ class Guard(Program):
 	def run(self):
 		super().run()
 
+		
+
 		while True:
 			movement = self.vision.findMovement()
 
