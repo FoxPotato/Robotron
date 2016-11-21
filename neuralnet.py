@@ -32,7 +32,7 @@ class NeuralNetwork(object):
         m = float(len(y))
 
         # Convert labels to binary array
-        c = np.arange(self.num_labels)
+        c = np.zeros(self.num_labels)
         y_temp = np.zeros(( m, self.num_labels) )
         
         for c in range(0, self.num_labels):
@@ -113,6 +113,29 @@ costs = nn.train(X_train, y_train, X_cv, y_cv, 5000)
 print(nn.cost(X_train, y_train)[0])
 print(nn.cost(X_cv, y_cv)[0])
 print(nn.cost(X_test, y_test)[0])
+
+prediction = nn.feedforward(X_test)[4]
+print(prediction)
+
+for r in range(30):
+    for c in range(3):
+        if prediction[r,c] > 0.5:
+            prediction[r,c] = 1
+        else:
+            prediction[r,c] = 0
+
+print(prediction)
+
+# Convert labels to binary array
+c = np.zeros(3)
+y_temp = np.zeros(( 30, 3) )
+
+for c in range(0, 3):
+    y_temp[:,c] = np.where(y_test==c, 1, 0)
+
+print(y_temp)
+
+print(prediction == y_temp)
 
 # Plot cost graph
 plt.plot(costs[0], "b")
