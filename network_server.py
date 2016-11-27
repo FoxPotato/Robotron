@@ -1,18 +1,19 @@
 import socket
 import sys
 
-# Create a TCP/IP socket
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server_address = ('localhost', 10000)
-print >>sys.stderr, 'starting up on %s port %s' % server_address
-sock.bind(server_address)
-sock.listen(1)
-while True:
-    # Find connections
-    connection, client_address = sock.accept()
-    try:
-        data = connection.recv(999)
-        print data
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-    except:
-        connection.close()
+port = 12345
+
+s.bind(('', port))
+print("Socket bound to %s" % port)
+
+s.listen(5)
+print("Socket is listening")
+
+while True:
+    client, addr = s.accept()
+    print("Established connection with %s" % str(addr))
+
+    client.send("Connection acknowledged")
+    client.close()
