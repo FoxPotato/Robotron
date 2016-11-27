@@ -86,7 +86,7 @@ class NeuralNetwork(object):
         return (a1, z2, a2, z3, h)
 
 # Load dataset
-data = np.loadtxt(open("resource/iris.data", 'rb'), delimiter=',')
+data = np.loadtxt(open("resource/r_iris.data", 'rb'), delimiter=',')
 X = data[:,0:4]
 y = data[:,4].astype(int)
 
