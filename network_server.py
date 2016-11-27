@@ -12,7 +12,9 @@ s.listen(5)
 print("Socket is listening")
 
 while True:
-    client, addr = s.accept()
+    (client, addr) = s.accept()
+
+    
     print("Established connection with %s" % str(addr))
 
     client.send("Connection acknowledged")
