@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-class NeuralNetwork(object):
+class neuralnetwork(object):
     def __init__(self, input_layer_size, hidden_layer_size, num_labels, training_rate=0.1, reg_factor=1.0):
         self.input_layer_size = input_layer_size
         self.hidden_layer_size = hidden_layer_size
@@ -85,6 +85,7 @@ class NeuralNetwork(object):
         
         return (a1, z2, a2, z3, h)
 
+'''
 # Load dataset
 data = np.loadtxt(open("resource/r_iris.data", 'rb'), delimiter=',')
 X = data[:,0:4]
@@ -104,7 +105,7 @@ X_test = X[120:150,:]
 y_test = y[120:150]
 
 # Initialize the network
-nn = NeuralNetwork(4, 5, 3, training_rate=0.2, reg_factor=0)
+nn = neuralnetwork(4, 5, 3, training_rate=0.2, reg_factor=0)
 
 # Train the network
 costs = nn.train(X_train, y_train, X_cv, y_cv, 5000)
@@ -145,3 +146,4 @@ plt.xlabel("Iterations")
 plt.ylabel("Cost")
 
 plt.show()
+'''
