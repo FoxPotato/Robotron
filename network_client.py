@@ -3,7 +3,7 @@ import sys
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-address = '192.168.1.10'
+address = '192.168.1.27'
 port = 12345
 
 s.connect((address, port))
