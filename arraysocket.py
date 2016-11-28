@@ -2,9 +2,7 @@ import socket
 import numpy as np
 from cStringIO import StringIO
 
-def startserver(server_address=''):
-    port = 12345
-
+def startserver(server_address='', port=12345):
     server_socket = socket.socket()
     server_socket.bind((server_address, port))
     server_socket.listen(1)
@@ -31,7 +29,7 @@ def startserver(server_address=''):
     print("Frame received")
     return array
 
-def startclient(server_address, array):
+def startclient(array, server_address='localhost', port=12345):
     if not isinstance(array, np.ndarray):
         print("Not a valid numpy array")
         return

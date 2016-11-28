@@ -17,4 +17,4 @@ s.close()
 
 array = np.random.rand(50,3)
 print(array)
-ars.startclient('192.168.15.113', array)
+ars.startclient(array, '192.168.15.113')
