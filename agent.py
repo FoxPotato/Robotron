@@ -6,8 +6,8 @@ import arraysocket as arso
 import thread
 
 capture = cv2.VideoCapture(0)
-capture.set(3, 600)
-capture.set(4, 360)
+capture.set(3, 200)
+capture.set(4, 120)
 
 ready = True
 
