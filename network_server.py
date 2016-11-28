@@ -1,6 +1,9 @@
 import socket
 import sys
+import arraysocket as ars
+import numpy as np
 
+'''
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 address = '192.168.1.27'
@@ -21,3 +24,9 @@ while True:
 
     client.send("Connection acknowledged")
     client.close()
+'''
+
+array = ars.startserver()
+print(array)
+
+
