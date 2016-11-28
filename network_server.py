@@ -3,9 +3,11 @@ import sys
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
+address = '192.168.1.27'
 port = 12345
+print(address)
 
-s.bind(('', port))
+s.bind((address, port))
 print("Socket bound to %s" % port)
 
 s.listen(5)
