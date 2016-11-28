@@ -2,11 +2,11 @@ import socket
 import numpy as np
 from cStringIO import StringIO
 
-def startserver():
+def startserver(server_addres=''):
     port = 12345
 
     server_socket = socket.socket()
-    server_socket.bind(('', port))
+    server_socket.bind((server_address, port))
     server_socket.listen(1)
 
     print("Waiting for connection")
