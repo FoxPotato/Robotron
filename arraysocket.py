@@ -2,7 +2,7 @@ import socket
 import numpy as np
 from cStringIO import StringIO
 
-def startserver(server_addres=''):
+def startserver(server_address=''):
     port = 12345
 
     server_socket = socket.socket()
