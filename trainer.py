@@ -13,16 +13,11 @@ def recvframe(address):
     frame = arso.startserver(address)
     ready = True
 
-while True:
-    frame = arso.startserver('192.168.15.113')
+    return frame
 
-    if ready:
-        try:
-            thread.start_new_thread(recvframe, ('192.168.15.113'))
-            ready = False
-        except:
-            print("Error: unable to start thread")
-    
+while True:
+    frame = arso.startserver('192.168.0.206')
+
     cv2.imshow('frame_received', frame)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):

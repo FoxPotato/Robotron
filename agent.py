@@ -14,18 +14,13 @@ ready = True
 def sendframe(frame, address):
     global ready
     
-    arso.startclient(frame, address)
+
     ready = True
 
 while(True):
     ret, frame = capture.read()
 
-    if ready:
-        try:
-            thread.start_new_thread(sendframe, (frame, '192.168.15.113'))
-            ready = False
-        except:
-            print("Error: unable to start thread")
+    arso.startclient(frame, '192.168.0.114')
 
     cv2.imshow('frame', frame)
 
